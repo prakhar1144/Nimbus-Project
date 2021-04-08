@@ -5,8 +5,8 @@
     font-size: 10px;
   }
   
-  #backgrenew {
-    background-image: url("/static/images/web-renewable.jpg");
+  #backgcl {
+    background-image: url("/static/images/web-load1.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -40,64 +40,24 @@
     transition: 0.3s ease;
   }
   
-  #brandrenew {
+  #brandcl {
     position: absolute;
     list-style: none;
     top: 50%;
     left: 3%;
     transform: translate(-3%, -50%);
   }
-  #brandrenew li a {
+  #brandcl li a {
     font-family: "Oswald", sans-serif;
     color: black;
     text-decoration: none;
     font-size: 3rem;
   }
-
   .title {
-	margin-top: 2rem;
-	font-family: "Grenze Gotisch", cursive;
-	text-align: center;
-	font-size: 4.5rem;
-	text-shadow: 2px 2px 5px grey;
-  }
-
-  #inp {
+    margin-top: 3rem;
+    font-family: "Grenze Gotisch", cursive;
     text-align: center;
-  }
-  
-  #inp input {
-    width: 20%;
-    border: 2px solid #5ab2ec;
-    border-radius: 4px;
-    text-align: center;
-    padding: 0.6rem 0;
-    cursor: text;
-  }
-  
-  #inp button {
-    font-family: inherit;
-    font-size: 1.4rem;
-    width: 10%;
-    padding: 0.4rem 0;
-    border: none;
-    border-radius: 5%;
-    background: #0ad9ff;
-    margin: 2rem 1rem;
-  }
-  
-  .card {
-    text-align: center;
-    width: 75%;
-    margin: 1rem auto;
-    cursor: pointer;
-    background-color: rgb(233, 230, 230);
-    filter: drop-shadow(0 0 6px rgb(156, 156, 156));
-    transition: 0.4s;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 8px rgb(150, 148, 148));
+    font-size: 4.5rem;
+    text-shadow: 2px 2px 5px grey;
   }
   

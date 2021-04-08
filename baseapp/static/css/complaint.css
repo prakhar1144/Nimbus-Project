@@ -6,7 +6,7 @@
 }
 
 #backgcomp {
-  background-image: url("/static/images/Complaint.jpg");
+  background-image: url("/static/images/web-complaint.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -81,20 +81,4 @@ nav {
   text-align: center;
   margin-top: 7%;
   background-color: #00a8ff;
-}
-
-@media only screen and (max-width: 480px) {
-  #backg {
-    background-image: url(mobile-complaint.jpg);
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
-  }
-  .main h1 {
-    text-align: center;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 100px;
-  }
 }

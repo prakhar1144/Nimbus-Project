@@ -27,16 +27,20 @@
         font-size: 3rem;
         margin: 5rem 0;
     }
-    input {
+    .cid-form input {
         width: 20%;
-        height: 25px;
+        height: 3rem;
         border: 2px solid rgb(14, 190, 235);
         border-radius: 4px;
-        padding-left: 3px;
+        padding: 1rem;
         margin: 2rem;
     }
-    button {
+    .cid-form button {
         width: 7rem;
+        height: 3rem;
+    }
+    .register {
+      width: 18rem; height: 4rem; margin: 2% 44%; padding: 10px 0;
     }
     table {
       font-family: arial, sans-serif;
@@ -54,6 +58,85 @@
     tr:nth-child(even) {
       background-color: #dddddd;
     }
+@media screen and (max-width: 768px) {
+  .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+  }
+
+  nav {
+    position: absolute;
+  }
+
+  #brandcomp {
+    position: absolute;
+    cursor: pointer;
+    left: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+  }
+  #brandcomp li a{
+      color: white;
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 7%;
+    top: 50%;
+    transform: translate(-7%, -50%);
+    z-index: 2;
+  }
+
+  .nav-links {
+    position: absolute;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    clip-path: circle(60px at 90% -10%);
+    -webkit-clip-path: circle(60px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+
+  .nav-links li a{
+      color: white;
+  }
+
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+    overflow: hidden;
+  }
+
+  #backgcomp {
+    background-image: url("/static/images/mobile-complaint.jpg");
+  }
+  .cid-form h1 {
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+    .cid-form input {
+        width: 40%;
+        height: 3rem;
+        border: 2px solid rgb(14, 190, 235);
+        border-radius: 4px;
+        padding: 1rem;
+        margin: 2rem;
+    }
+    .cid-form button {
+        width: 7rem;
+    }
+    .register {
+      width:18rem; height: 3rem; margin: 2% 25%; padding: 7px 0;
+    }
+}
     </style>
 </head>
 <body>
@@ -75,7 +158,7 @@
                 <li><a href="{% url 'bill' %}">Electricity Bill</a></li>
             </ul>
         </nav>
-        <h1 style="font-size: 5rem;">Electricity Not Working?</h1>
+        <!-- <h1 style="font-size: 5rem;">Electricity Not Working?</h1> -->
     </section>
     
 
@@ -112,7 +195,9 @@
         {% endfor %}
     </table>
     <h1 style="margin-top:5rem; font-size:3rem; text-align: center;">Facing some problems!</h1>
-    <a href="{% url 'register' %}" class="btn btn-primary" style="width:18rem; height: 3rem; margin: 2% 44%; padding: 7px 0;">Register Complaint</a>
+    <a href="{% url 'register' %}" class="btn btn-primary register">Register Complaint</a>
+<br>
+<br>
 </div>
 
 
