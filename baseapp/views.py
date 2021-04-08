@@ -122,8 +122,8 @@ def employee_filter(request):
         context['employee_data'] = Employee.objects.filter(area_code=request.POST['area_code'])
         return render(request, 'baseapp/register.html', context)
 
-def things_speak(request):
-    url = "http://api.thingspeak.com/channels/1352086/feed.json?key=WKOYCCHJYBPS32RO"
-    data = requests.get(url).json()
-    print(data)
-    return redirect('home')
+# def things_speak(request):
+#     url = "http://api.thingspeak.com/channels/1352086/feed.json?key=WKOYCCHJYBPS32RO"
+#     data = requests.get(url).json()
+#     print(data)
+#     return redirect('home')
