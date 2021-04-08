@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+#backgcomp {
+  background-image: url("/static/images/Complaint.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+nav {
+  height: 10vh;
+  width: 100vw;
+  position: absolute;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 50%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+}
+.nav-links li a {
+  font-family: "Oswald", sans-serif;
+  color: rgb(75, 76, 77);
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.nav-links li:hover {
+  transform: translateY(-8px);
+  transition: 0.3s ease;
+}
+
+#brandcomp {
+  position: absolute;
+  list-style: none;
+  top: 50%;
+  left: 3%;
+  transform: translate(-3%, -50%);
+}
+#brandcomp li a {
+  font-family: "Oswald", sans-serif;
+  color: black;
+  text-decoration: none;
+  font-size: 3rem;
+}
+
+.main h1 {
+  text-align: center;
+  color: white;
+  padding-top: 20%;
+  padding-left: 53%;
+}
+
+.form h1 {
+  text-align: center;
+  padding-top: 3%;
+}
+
+.form input {
+  margin: 0 30px;
+}
+
+.button {
+  margin-left: 10px;
+}
+.row {
+  margin-top: 7%;
+}
+
+.hist {
+  text-align: center;
+  margin-top: 7%;
+  background-color: #00a8ff;
+}
+
+@media only screen and (max-width: 480px) {
+  #backg {
+    background-image: url(mobile-complaint.jpg);
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+  }
+  .main h1 {
+    text-align: center;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+  }
+}

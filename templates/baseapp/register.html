@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/register.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> 
+
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+.title {
+  margin-top: 2rem;
+  font-family: "Grenze Gotisch", cursive;
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 5px grey;
+}
+.cid-form {
+        text-align: center;
+    }
+
+
+.cid-form input {
+        width: 20%;
+        height: 25px;
+        border: 2px solid rgb(14, 190, 235);
+        border-radius: 4px;
+        padding-left: 3px;
+        margin: 2rem;
+    }
+.cid-form button {
+        width: 4rem;
+        height: 2rem;
+        font-size: 10px;
+    }
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #24bbcf;
+      text-align: left;
+      font-size: 1rem;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+</style>    
+</head>
+<body>
+    <!-- <div class="consumer col-sm-4">
+        <h1>Consumer Details</h1>
+        <img src="img_avatar.png" alt="" style="width: 100px;">
+        <div class="container">
+            <h4><b>Ravi Ranjan</b></h4>
+            <p>Consumer ID</p>
+            <p>Sub Station</p>
+            <p>Area Code</p>
+            <p>Email ID</p>
+        </div>
+    </div>
+
+    <div class="employee col-sm-4">
+        <h1>Employee Details</h1>
+        <img src="img_avatar.png" alt="" style="width: 100px;">
+        <div class="container">
+            <h4><b>Ravi Ranjan</b></h4>
+            <p>Designation</p>
+            <p>Email ID</p>
+            <p>Mobile</p>
+        </div>
+    </div> -->
+
+    <!-- <div class="file col-sm-4">
+        
+        <div class="comp">
+            <h1>File Complaint</h1>
+            <form action="action_page.php">
+        <div class="row">
+        <div class="col-25">
+        <label for="fname">Address</label>
+        </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="Address" placeholder="Your address..">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Category</label>
+      </div>
+      <div class="col-75">
+        <select id="category" name="country">
+          <option value="ELectricity Outage">ELectricity Outage</option>
+          <option value="Employee Complaint">Employee Complaint</option>
+          <option value="Suggestion">Suggestion</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Description</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+    </div> -->
+    <h1 class="title">Register Complaint</h1>
+    <div class="container" style="margin: 20px 30%">
+      
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="form-group col-md-6 mb-0">
+              {{ form.consumer_id|as_crispy_field }}
+            </div>
+            <br>
+            <div class="form-group col-md-6 mb-0">
+              {{ form.category|as_crispy_field }}
+            </div>
+          </div>
+          <br>
+          <div class="form-row">
+            <div class="form-group col-md-6 mb-0">
+              {{ form.description|as_crispy_field }}
+            </div>
+            <br>
+            <div class="form-group col-md-4 mb-0">
+              {{ form.address|as_crispy_field }}
+            </div>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-success">Save</button>
+      </form>
+    </div>
+    <h1 class="title">Find Employee in your Area</h1>
+    <div class="container">
+      <div class="cid-form">
+        <form action = "{% url 'employee_filter' %}" method = "POST">
+            {% csrf_token %}
+            <input type="text" name="area_code" placeholder="Area Code">
+            <button type="submit" class="btn btn-primary">Go!</button>
+        </form>        
+      </div>
+      <table>
+        <tr>
+        <th>Name</th>
+        <th>Area Code</th>
+        <th>Designation</th>
+        <th>Email</th>
+        <th>Contact Number</th>
+        </tr>
+        {% for employee in employee_data %}
+        <tr>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.area_code }}</td>
+          <td>{{ employee.designation }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.contact_number }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</html>

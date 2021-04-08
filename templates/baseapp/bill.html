@@ -1,0 +1,84 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> 
+<style>
+*{
+    font-size: 20px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+  <h2 class="title" style="font-size: 50px; margin-top: 10%;">Electricity Bill</h2>
+<div style="margin-top: 5%;">
+
+<div class="container">
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Consumer ID</th>
+    <th>Meter Number</th>
+    <th>Total Cost</th>
+  </tr>
+
+  <tr>
+    <td>Ravi Ranjan</td>
+    <td>CH 5844</td>
+    <td>MH 75689125</td>
+    <td>RS. 723</td>
+  </tr>
+
+  <!-- <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>PB 5811</td>
+    <td>RS. 205</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>CY 1258</td>
+    <td>RS.680</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>WR 5586</td>
+    <td>RS. 890</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>PT 4125</td>
+    <td>RS. 560</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>HM 5528</td>
+    <td>RS. 340</td>
+  </tr> -->
+</table>
+</div>
+</div>
+</body>
+</html>

@@ -1,7 +1,22 @@
-from django.forms import ModelForm, TextInput
-from .models import City
+from django.forms import ModelForm
+from .models import RenewableData, Consumer, Employee, RegisterComplaint
 
-class Cityform(ModelForm):
+class RenewableDataForm(ModelForm):
     class Meta:
-        model = City
-        fields = ['name']
+        model = RenewableData
+        fields = ['Cityname', 'wattage']
+
+class ConsumerForm(ModelForm):
+    class Meta:
+        model = Consumer
+        fields = ['name','consumer_id','sub_station','area_code', 'email']
+
+class EmployeeForm(ModelForm):
+    class Meta:
+        model = Employee
+        fields = ['name','designation','contact_number','email']
+
+class RegisterComplaintForm(ModelForm):
+    class Meta:
+        model = RegisterComplaint
+        fields = ['consumer_id', 'category', 'description', 'address']

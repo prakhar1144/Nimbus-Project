@@ -3,8 +3,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
     <title>OJAS</title>
+    {% endblock %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -15,12 +18,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> 
 </head>
 <body>
-
-    {% block content %}
     <section id="backg">
         <nav>
             <div id="brand">
-                <li><a href="#">OJAS</a></li>
+                <li><a href="{% url 'home' %}">OJAS</a></li>
             </div>
             <div class="hamburger">
                 <div class="line"></div>
@@ -28,10 +29,10 @@
                 <div class="line"></div>
             </div>
             <ul class="nav-links">
-                <li><a href="#">Option 1</a></li>
-                <li><a href="#">Option 2</a></li>
-                <li><a href="#">Option 3</a></li>
-                <li><a href="#">Option 4</a></li>
+                <li><a href="{% url 'complaint' %}">Complaint</a></li>
+                <li><a href="{% url 'renewable' %}">Renewable Energy</a></li>
+                <li><a href="{% url 'register' %}">Register Complaint</a></li>
+                <li><a href="{% url 'bill' %}">Electricity Bill</a></li>
             </ul>
         </nav>
         <!--<img src="{% static 'images/bg-3.jpg' %}">-->
@@ -52,7 +53,6 @@
         </div>
 
     </section>-->
-    
     <section>
         <div class="title">Features</div>
         <div class="container" style="margin-top: 30px;">
@@ -61,7 +61,7 @@
                   <div class="card">
                     <div class="card-body svg-image">
                         <img src="{% static 'images/Complaint.svg' %}">
-                        <p><a href="#">Complaint</a></p>
+                        <p><a href="{% url 'complaint' %}">Complaint</a></p>
                     </div>
                     
                   </div>
@@ -83,7 +83,7 @@
                       <!--style=" background-color: #e9c89e;"-->
                     <div class="card-body svg-image">
                         <img src="{% static 'images/powerfactor.svg' %}">
-                    <p><a href="#">Power Factor</a></p>
+                    <p><a href="{% url 'power_factor' %}">Power Factor</a></p>
                       
                     </div>
                   </div>
@@ -93,7 +93,7 @@
                       <!--style="background-color: #9ec1e9;"-->
                     <div class="card-body svg-image">
                         <img src="{% static 'images/bill.svg' %}">
-                    <p><a href="#">Electricity Bill</a></p>
+                    <p><a href="{% url 'bill' %}">Electricity Bill</a></p>
                       
                     </div>
                   </div>
@@ -113,43 +113,6 @@
     
         </div>
     </section>
-    {% endblock %}
-    <!--<section>
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#0099ff" fill-opacity="1" d="M0,224L80,208C160,192,320,160,480,154.7C640,149,800,171,960,170.7C1120,171,1280,149,1360,138.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-            </svg>
-        </div>
-        <div id="about">
-            <h3>ABOUT</h3>
-            <p id="about-para">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-               in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-               pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-           </p>
-        </div>
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#0099ff" fill-opacity="1" d="M0,64L120,69.3C240,75,480,85,720,112C960,139,1200,181,1320,202.7L1440,224L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
-            </svg>
-        </div>
-    </section>
-    <section>
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#0099ff" fill-opacity="1" d="M0,224L80,208C160,192,320,160,480,154.7C640,149,800,171,960,170.7C1120,171,1280,149,1360,138.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-            </svg>
-        </div>
-        <div id="footer">
-
-        </div>
-
-    </section>-->
-
-    <br>
-    <br>
-
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <script src="{% static 'javascript/script.js' %}"></script>
