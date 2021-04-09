@@ -82,7 +82,11 @@ def complaint(request):
     return render(request, 'baseapp/complaint.html', context)
 
 def bill(request):
-    return render(request, 'baseapp/bill.html')
+    context = {}
+    url = "http://api.thingspeak.com/channels/1352086/feed.json?key=WKOYCCHJYBPS32RO"
+    data = requests.get(url).json()
+    context['data'] = data['feeds'][-1] 
+    return render(request, 'baseapp/bill.html', context)
 
 def power_factor(request):
     context = {}
